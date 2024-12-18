@@ -40,7 +40,14 @@ header {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    transition: color 0.3s;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
 }
 
 .nav a:hover {
@@ -84,14 +91,25 @@ header {
 
 /* Project Cards */
 .project-card {
+    position: relative;  /* Ensure relative positioning for the pseudo-element */
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    opacity: 0; 
-    animation: fadeInUp 1s ease-out forwards;
+}
+
+.project-card::after img{
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;  /* Adjust the height of the blurred area */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));  /* Fading white effect */
+    filter: blur(10px);  /* Apply blur effect */
+    pointer-events: none;  /* Prevent the pseudo-element from affecting clicks */
 }
 
 .project-card:nth-child(odd) {
@@ -110,7 +128,7 @@ header {
 .project-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover;  /* Ensure the image fills the container */
     transition: transform 0.3s ease;
 }
 
@@ -220,5 +238,30 @@ footer a:hover {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none; /* Hide the nav links on mobile */
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #1f4037;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon on mobile */
     }
 }
