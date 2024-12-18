@@ -14,21 +14,21 @@ const projects = [
     },
     {
         name: "Project 3",
-        description: "A to-do list website.",
+        description: "A to-do list website made with the help HTML, CSS, Javascript.",
         image: "Website Image - 6.png",
         link: "https://ashishroy1724.github.io/to-do-list.github.io/"
     },
     {
         name: "Project 4",
-        description: "A social media platform to connect with friends and share updates.",
-        image: "project4.png",
-        link: "https://example.com/project4"
+        description: "A mortgage broker platform made using Wix Studio.",
+        image: "Website Image - 7.png",
+        link: "https://ashishproject78782.wixsite.com/mortgage-broker"
     },
     {
         name: "Project 5",
-        description: "A task management app for teams to collaborate efficiently.",
-        image: "project5.png",
-        link: "https://example.com/project5"
+        description: "A food delivery app designed with Figma to enhance user experience.",
+        image: "Website Image - 8.png",
+        link: "https://www.figma.com/design/zssyr9XmKmsraEsLCOFcv2/Food-Delivery-App?node-id=0-1&t=FihDTXcHy9CfDA4v-1"
     },
     // Add more projects as needed
 ];
@@ -46,7 +46,7 @@ function generateProjects() {
             <img src="${project.image}" alt="${project.name}">
             <h3>${project.name}</h3>
             <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">Visit Website</a>
+            <a href="${project.link}" target="_blank">Visit Project</a>
         `;
         
         projectContainer.appendChild(projectCard);
