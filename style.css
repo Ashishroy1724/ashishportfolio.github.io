@@ -37,7 +37,14 @@ header {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    transition: color 0.3s;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
 }
 
 .nav a:hover {
@@ -105,11 +112,10 @@ header {
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
     gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
-
 .project-card {
     background: #1f4037;
     color: white;
@@ -196,6 +202,30 @@ header {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+
+/* Style for View More button */
+.view-more-container {
+    display: flex;
+    justify-content: center;  /* Center the button horizontally */
+    margin-top: 20px;  /* Add some space above the button */
+}
+
+.view-more {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #ff4f41; /* Darker shade on hover */
 }
 
 footer {
@@ -315,5 +345,106 @@ footer a:hover {
     }
     100% {
         background: linear-gradient(135deg, #99f2c8, #1f4037);
+    }
+}
+
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none; /* Hide the nav links on mobile */
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #1f4037;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon on mobile */
+    }
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* For very small screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Responsive adjustments for the project grid */
+@media screen and (max-width: 768px) {
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack project cards vertically */
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 100%; /* Ensure project cards take full width */
+        padding: 15px; /* Reduce padding for better spacing */
+    }
+
+    .project-card img {
+        height: 150px; /* Adjust image height for better fit */
+    }
+}
+
+/* Adjustments for very small screens (phones in portrait mode) */
+@media screen and (max-width: 480px) {
+    .project-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1rem; /* Smaller font size for headings */
+    }
+
+    .project-card p {
+        font-size: 0.85rem; /* Smaller font size for descriptions */
+    }
+
+    .cta {
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+        font-size: 1rem; /* Adjust font size for smaller screens */
     }
 }
