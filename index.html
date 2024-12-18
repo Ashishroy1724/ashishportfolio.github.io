@@ -79,11 +79,14 @@
 <body>
     <header>
         <div class="logo">My Portfolio</div>
-        <nav class="nav">
+        <nav class="nav" id="navbar">
             <a href="#">Home</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="menu-icon" id="menu-icon">
+            <span>&#9776;</span> <!-- Hamburger menu icon -->
+        </div>
     </header>
 
     <section class="hero">
@@ -96,25 +99,20 @@
 
     <section class="projects" id="projects">
         <h2>My Work</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="Webstie Image - 3.png" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>An innovative app for managing personal finances with stunning UI/UX.</p>
-                <a href="https://ashishroy1724.github.io/finance-manager.github.io/" target="_blank">Visit Website</a>
-            </div>
-            <div class="project-card">
-                <img src="Website Image 1.png" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>A cutting-edge e-commerce website featuring seamless shopping experiences.</p>
-                <a href="https://fragranceofperfume.com/" target="_blank">Visit Website</a>
-            </div>
-            <div class="project-card">
-                <img src="Website Image - 8.png" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>A food delivery app designed with Figma to enhance user experience.</p>
-                <a href="https://www.figma.com/design/zssyr9XmKmsraEsLCOFcv2/Food-Delivery-App?node-id=0-1&t=FihDTXcHy9CfDA4v-1" target="_blank">Visit Project</a>
-            </div>
+        <div class="project-grid" id="project-grid">
+            <!-- Project cards will be dynamically inserted here by JavaScript -->
+        </div>
+    
+        <div class="pagination">
+            <button class="prev" onclick="changePage(-1)">Previous</button>
+            <span id="page-number">Page 1</span>
+            <button class="next" onclick="changePage(1)">Next</button>
+        </div>
+    
+        <div class="view-more-container">
+            <a href="explore.html">
+                <button class="view-more">View More</button>
+            </a>
         </div>
     </section>
 
